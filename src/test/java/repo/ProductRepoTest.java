@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductRepoTest {
 
     @Test
-    public void TestAList(){
+    public void TestList(){
         // GIVE
         ProductRepo products = generateTestData();
         // WHEN
@@ -30,20 +30,36 @@ public class ProductRepoTest {
         // GIVE
         ProductRepo products = generateTestData();
         Product productToAdd = new Product(10, "Zitrone");
+
+        ArrayList<Product> expected = new ArrayList<>();
+        expected.add(new Product(532, "Kirsche"));
+        expected.add(new Product(134, "Apfel"));
+        expected.add(new Product(10, "Zitrone"));
+        expected.add(new Product(12, "Banane"));
+
         // WHEN
         products.add(productToAdd);
         // THEN
+        assertEquals(expected, products.list());
 
     }
+
     @Test
-    public void TestListMethod(){
-        // Give
-        ProductRepo allProducts = new ProductRepo();
+    public void TestRemoveMethod(){
+        // GIVE
+        ProductRepo products = generateTestData();
+        Product productToDelete = new Product(532, "Kirsche");
+
+        ArrayList<Product> expected = new ArrayList<>();
+        expected.add(new Product(134, "Apfel"));
+        expected.add(new Product(12, "Banane"));
 
         // WHEN
-
+        products.remove(productToDelete);
         // THEN
+        assertEquals(expected, products.list());
     }
+
 
     private ProductRepo generateTestData(){
         ProductRepo products = new ProductRepo();
