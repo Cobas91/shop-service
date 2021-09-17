@@ -40,16 +40,17 @@ public class ProductRepo {
         return allProductsArrayList;
     }
 
-    public Product getProduct(String name){
-        Product toFind = new Product(0, name, 0.0);
-        return this.allProducts.get(toFind);
+    public Product getProduct(int id){
+        return this.allProducts.get(id);
     }
 
     @Override
     public String toString() {
-        return "ProductRepo{" +
-                "allProducts=" + allProducts +
-                '}';
+        StringBuilder list = new StringBuilder();
+        this.allProducts.forEach((k,v) -> {
+            list.append(v);
+        });
+        return list.toString();
     }
 
     /*

@@ -13,12 +13,13 @@ public class Product {
         this.price = price;
     }
     @Override
-    public String toString() {
-        return "Product{" +
-                "productNumber=" + productNumber +
-                ", productDiscription='" + productDiscription + '\'' +
-                ", price=" + price +
-                '}';
+    public String toString(){
+        String newLine = System.getProperty("line.separator");
+        return
+                "Produktnummer: "+this.productNumber+ newLine +
+                        "Produktbeschreibung: "+this.productDiscription+ newLine+
+                        "Preis: "+this.price+ newLine +
+                        "___________"+newLine;
     }
 
     @Override

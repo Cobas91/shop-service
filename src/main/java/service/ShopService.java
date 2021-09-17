@@ -13,11 +13,11 @@ public class ShopService {
     }
 
     public String listAllProducts(){
-        return "";
+        return this.products.toString();
     }
 
-    public Product findProduct(String name){
-        return products.getProduct("Banane");
+    public Product findProduct(int id){
+        return products.getProduct(id);
     }
 
     public void addNewProduct(){
