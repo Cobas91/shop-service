@@ -11,16 +11,16 @@ public class OrderRepo {
 
     }
 
-    public void add(){
-
+    public void add(Order toAdd){
+        this.orders.add(toAdd);
     }
 
-    public void remove(){
-
+    public void remove(Order toRemove){
+        this.orders.remove(toRemove);
     }
 
-    public void list(){
-
+    public ArrayList<Order> list(){
+        return this.orders;
     }
 
     @Override
