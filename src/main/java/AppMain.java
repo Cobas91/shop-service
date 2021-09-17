@@ -10,7 +10,7 @@ public class AppMain {
         try{
             System.out.println(shop.findProduct(11));
         }catch(RuntimeException e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
 
         //System.out.println(shop.listAllProducts());
