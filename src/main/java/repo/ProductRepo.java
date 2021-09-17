@@ -2,6 +2,7 @@ package repo;
 
 import model.Product;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,13 +40,20 @@ public class ProductRepo {
         return allProductsArrayList;
     }
 
+    @Override
+    public String toString() {
+        return "ProductRepo{" +
+                "allProducts=" + allProducts +
+                '}';
+    }
+
     /*
-        Hilfsfunktionen zum erstellen einer Produkt Datenbank.
-     */
+            Hilfsfunktionen zum erstellen einer Produkt Datenbank.
+         */
     public Map<Integer, Product> generateProduct(int amount){
         Map<Integer, Product> data = new HashMap<>();
         for (int i = 0; i < amount; i++) {
-            data.put(1 , new Product(i, getRandomProductName(), getRandomPrice()));
+            data.put(i , new Product(i, getRandomProductName(), getRandomPrice()));
         }
         return data;
     }
@@ -75,10 +83,11 @@ public class ProductRepo {
     }
 
     private double getRandomPrice(){
-        double min = 0.50;
-        double max = 2.90;
+        DecimalFormat df = new DecimalFormat("0,00");
+        double min = 1;
+        double max = 100;
         Random r = new Random();
-        return min + (max - min) * r.nextDouble();
+        return Double.parseDouble(df.format(min + (max - min) * r.nextDouble()));
     }
 
 

@@ -7,8 +7,12 @@ import java.util.ArrayList;
 public class OrderRepo {
     ArrayList<Order> orders = new ArrayList<>();
 
-    public OrderRepo(){
+    public OrderRepo(Order order){
+        this.orders.add(order);
+    }
 
+    public ArrayList<Order> getOrders(){
+        return this.orders;
     }
 
     public void add(Order toAdd){
