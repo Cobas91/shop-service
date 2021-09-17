@@ -11,9 +11,11 @@ public class Order {
         this.allProducts = allProducts;
         this.orderNumber = orderNumber;
     }
+
     public void add(Product product){
         this.allProducts.add(product);
     }
+
     public ProductRepo getAllProducts() {
         return allProducts;
     }

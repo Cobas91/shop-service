@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Product {
     private int productNumber;
-    private String productDiscription;
+    private String productDescription;
     private double price;
 
-    public Product(int productNumber, String productDiscription, double price){
+    public Product(int productNumber, String productDescription, double price){
         this.productNumber = productNumber;
-        this.productDiscription = productDiscription;
+        this.productDescription = productDescription;
         this.price = price;
     }
 
@@ -18,7 +18,7 @@ public class Product {
         String newLine = System.getProperty("line.separator");
         return
                 "Produktnummer: "+this.productNumber+ newLine +
-                        "Produktbeschreibung: "+this.productDiscription+ newLine+
+                        "Produktbeschreibung: "+this.productDescription + newLine+
                         "Preis: "+this.price+ newLine +
                         "___________"+newLine;
     }
@@ -28,12 +28,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(productDiscription, product.productDiscription);
+        return Objects.equals(productDescription, product.productDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productDiscription);
+        return Objects.hash(productDescription);
     }
 
     public int getProductNumber() {
@@ -44,12 +44,12 @@ public class Product {
         this.productNumber = productNumber;
     }
 
-    public String getProductDiscription() {
-        return productDiscription;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setProductDiscription(String productDiscription) {
-        this.productDiscription = productDiscription;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public double getPrice() {
