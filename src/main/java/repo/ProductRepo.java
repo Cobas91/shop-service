@@ -40,6 +40,11 @@ public class ProductRepo {
         return allProductsArrayList;
     }
 
+    public Product getProduct(String name){
+        Product toFind = new Product(0, name, 0.0);
+        return this.allProducts.get(toFind);
+    }
+
     @Override
     public String toString() {
         return "ProductRepo{" +

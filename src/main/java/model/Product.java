@@ -26,12 +26,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return productNumber == product.productNumber;
+        return Objects.equals(productDiscription, product.productDiscription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productNumber);
+        return Objects.hash(productDiscription);
     }
 
     public int getProductNumber() {
