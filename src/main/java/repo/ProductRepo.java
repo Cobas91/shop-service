@@ -13,6 +13,7 @@ public class ProductRepo {
 
     }
 
+
     public void add(Product toAdd){
         allProducts.put(toAdd.getProductNumber(), toAdd);
     }
@@ -22,6 +23,10 @@ public class ProductRepo {
     }
 
     public ArrayList<Product> list(){
-        return new ArrayList<>();
+        ArrayList<Product> allProductsArrayList = new ArrayList<>();
+        this.allProducts.forEach((k,v) -> {
+            allProductsArrayList.add(v);
+        });
+        return allProductsArrayList;
     }
 }
