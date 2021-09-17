@@ -42,7 +42,7 @@ class OrderRepoTest {
         // WHEN
         orders.add(order2);
         // THEN
-        assertEquals(2,orders.getOrders().size());
+        assertEquals(2,orders.list().size());
 
     }
 

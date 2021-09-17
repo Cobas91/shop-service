@@ -1,36 +1,49 @@
 package repo;
 
 import model.Order;
+import model.Product;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class OrderRepo {
-    ArrayList<Order> orders = new ArrayList<>();
+    Map<Integer, Order> orders = new HashMap<>();
 
     public OrderRepo(Order order){
-        this.orders.add(order);
+        this.orders.put(order.getOrderNumber(), order);
     }
+    public OrderRepo(){
 
-    public ArrayList<Order> getOrders(){
-        return this.orders;
     }
 
     public void add(Order toAdd){
-        this.orders.add(toAdd);
+        this.orders.put(toAdd.getOrderNumber(), toAdd);
     }
+
 
     public void remove(Order toRemove){
         this.orders.remove(toRemove);
     }
 
+    public Order getOrderByID(int id){
+        return this.orders.get(id);
+    }
+
     public ArrayList<Order> list(){
-        return this.orders;
+        ArrayList<Order> allOrdersArrayList = new ArrayList<>();
+        this.orders.forEach((k,v) -> {
+            allOrdersArrayList.add(v);
+        });
+        return allOrdersArrayList;
     }
 
     @Override
     public String toString() {
-        return "OrderRepo{" +
-                "orders=" + orders +
-                '}';
+        StringBuilder list = new StringBuilder();
+        this.orders.forEach((k,v) -> {
+            list.append(v);
+        });
+        return list.toString();
     }
 }

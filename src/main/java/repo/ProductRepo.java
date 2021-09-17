@@ -27,6 +27,9 @@ public class ProductRepo {
     public void add(Product toAdd){
         allProducts.put(toAdd.getProductNumber(), toAdd);
     }
+    public void add(int productNumber, Product toAdd){
+        allProducts.put(toAdd.getProductNumber(), toAdd);
+    }
 
     public void remove(Product toRemove){
         allProducts.remove(toRemove.getProductNumber());

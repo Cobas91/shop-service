@@ -13,7 +13,9 @@ public class Order {
         this.allProducts = allProducts;
         this.orderNumber = orderNumber;
     }
-
+    public void add(int productNumber, Product product){
+        this.allProducts.add(productNumber, product);
+    }
     public ProductRepo getAllProducts() {
         return allProducts;
     }
@@ -37,9 +39,9 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "orderNumber=" + orderNumber +
-                ", allProducts=" + allProducts +
-                '}';
+        String newLine = System.getProperty("line.separator");
+        return
+                "Bestellnummer: "+this.orderNumber+ newLine +
+                        "Produkte: "+newLine+this.allProducts+ newLine;
     }
 }
