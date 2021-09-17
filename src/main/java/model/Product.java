@@ -6,6 +6,10 @@ public class Product {
     private int productNumber;
     private String productDiscription;
 
+    public Product(int productNumber, String productDiscription){
+        this.productNumber = productNumber;
+        this.productDiscription = productDiscription;
+    }
     @Override
     public String toString() {
         return "Product{" +
