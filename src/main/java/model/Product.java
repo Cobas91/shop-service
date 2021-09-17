@@ -5,10 +5,12 @@ import java.util.Objects;
 public class Product {
     private int productNumber;
     private String productDiscription;
+    private double price;
 
-    public Product(int productNumber, String productDiscription){
+    public Product(int productNumber, String productDiscription, double price){
         this.productNumber = productNumber;
         this.productDiscription = productDiscription;
+        this.price = price;
     }
     @Override
     public String toString() {
@@ -48,15 +50,12 @@ public class Product {
         this.productDiscription = productDiscription;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public void setPrice(float price) {
         this.price = price;
     }
-
-    private float price;
-
 
 }

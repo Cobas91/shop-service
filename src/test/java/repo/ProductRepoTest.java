@@ -20,22 +20,22 @@ public class ProductRepoTest {
         ArrayList<Product> actual = products.list();
         // THEN
         ArrayList<Product> expected = new ArrayList<>();
-        expected.add(new Product(532, "Kirsche"));
-        expected.add(new Product(134, "Apfel"));
-        expected.add(new Product(12, "Banane"));
+        expected.add(new Product(532, "Kirsche", 1.11));
+        expected.add(new Product(134, "Apfel", 1.56));
+        expected.add(new Product(12, "Banane", 0.98));
         assertEquals(expected, actual);
     }
     @Test
     public void TestAddMethod(){
         // GIVE
         ProductRepo products = generateTestData();
-        Product productToAdd = new Product(10, "Zitrone");
+        Product productToAdd = new Product(10, "Zitrone", 1.90);
 
         ArrayList<Product> expected = new ArrayList<>();
-        expected.add(new Product(532, "Kirsche"));
-        expected.add(new Product(134, "Apfel"));
-        expected.add(new Product(10, "Zitrone"));
-        expected.add(new Product(12, "Banane"));
+        expected.add(new Product(532, "Kirsche", 1.11));
+        expected.add(new Product(134, "Apfel", 1.56));
+        expected.add(new Product(10, "Zitrone", 1.90));
+        expected.add(new Product(12, "Banane", 0.98));
 
         // WHEN
         products.add(productToAdd);
@@ -48,11 +48,11 @@ public class ProductRepoTest {
     public void TestRemoveMethod(){
         // GIVE
         ProductRepo products = generateTestData();
-        Product productToDelete = new Product(532, "Kirsche");
+        Product productToDelete = new Product(532, "Kirsche", 1.11);
 
         ArrayList<Product> expected = new ArrayList<>();
-        expected.add(new Product(134, "Apfel"));
-        expected.add(new Product(12, "Banane"));
+        expected.add(new Product(134, "Apfel",1.56));
+        expected.add(new Product(12, "Banane", 0.98));
 
         // WHEN
         products.remove(productToDelete);
@@ -63,9 +63,9 @@ public class ProductRepoTest {
 
     private ProductRepo generateTestData(){
         ProductRepo products = new ProductRepo();
-        products.add(new Product(134, "Apfel"));
-        products.add(new Product(12, "Banane"));
-        products.add(new Product(532, "Kirsche"));
+        products.add(new Product(134, "Apfel", 1.56));
+        products.add(new Product(12, "Banane", 0.98));
+        products.add(new Product(532, "Kirsche", 1.11));
         return products;
     }
 

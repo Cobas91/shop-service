@@ -13,7 +13,6 @@ public class ProductRepo {
 
     }
 
-
     public void add(Product toAdd){
         allProducts.put(toAdd.getProductNumber(), toAdd);
     }
