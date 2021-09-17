@@ -5,14 +5,22 @@ import java.util.Objects;
 public class Product {
     private int productNumber;
     private String productDiscription;
+    private double price;
+
+    public Product(int productNumber, String productDiscription, double price){
+        this.productNumber = productNumber;
+        this.productDiscription = productDiscription;
+        this.price = price;
+    }
 
     @Override
-    public String toString() {
-        return "Product{" +
-                "productNumber=" + productNumber +
-                ", productDiscription='" + productDiscription + '\'' +
-                ", price=" + price +
-                '}';
+    public String toString(){
+        String newLine = System.getProperty("line.separator");
+        return
+                "Produktnummer: "+this.productNumber+ newLine +
+                        "Produktbeschreibung: "+this.productDiscription+ newLine+
+                        "Preis: "+this.price+ newLine +
+                        "___________"+newLine;
     }
 
     @Override
@@ -20,12 +28,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return productNumber == product.productNumber;
+        return Objects.equals(productDiscription, product.productDiscription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productNumber);
+        return Objects.hash(productDiscription);
     }
 
     public int getProductNumber() {
@@ -44,15 +52,12 @@ public class Product {
         this.productDiscription = productDiscription;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public void setPrice(float price) {
         this.price = price;
     }
-
-    private float price;
-
 
 }
