@@ -7,18 +7,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProductRepo {
-    Map<Integer, Product> productRepo = new HashMap<>();
+    Map<Integer, Product> allProducts = new HashMap<>();
 
     public ProductRepo(){
 
     }
 
     public void add(Product toAdd){
-        // Add Product
+        allProducts.put(toAdd.getProductNumber(), toAdd);
     }
 
     public void remove(Product toRemove){
-        // Remove Product
+        allProducts.remove(toRemove.getProductNumber());
     }
 
     public ArrayList<Product> list(){
