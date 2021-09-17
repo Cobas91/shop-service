@@ -3,10 +3,7 @@ package repo;
 import model.Product;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class ProductRepo {
     Map<Integer, Product> allProducts = new HashMap<>();
@@ -40,8 +37,8 @@ public class ProductRepo {
         return allProductsArrayList;
     }
 
-    public Product getProduct(int id){
-        return this.allProducts.get(id);
+    public Optional<Product> getProduct(int id){
+        return Optional.ofNullable(this.allProducts.get(id));
     }
 
     @Override

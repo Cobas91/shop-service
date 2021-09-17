@@ -11,8 +11,8 @@ public class Order {
         this.allProducts = allProducts;
         this.orderNumber = orderNumber;
     }
-    public void add(int productNumber, Product product){
-        this.allProducts.add(productNumber, product);
+    public void add(Product product){
+        this.allProducts.add(product);
     }
     public ProductRepo getAllProducts() {
         return allProducts;

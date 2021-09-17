@@ -5,6 +5,8 @@ import model.Product;
 import repo.OrderRepo;
 import repo.ProductRepo;
 
+import java.util.Optional;
+
 public class ShopService {
     private ProductRepo products;
     private OrderRepo orders = new OrderRepo();
@@ -24,17 +26,25 @@ public class ShopService {
     public ShopService(int productRepoAmount){
         this.products = new ProductRepo(productRepoAmount);
     }
+    public ShopService(){
+        this.products = new ProductRepo();
+    }
 
     public String listAllProducts(){
         return this.products.toString();
     }
 
-    public Product findProduct(int id){
-        return products.getProduct(id);
+    public Product findProduct(int id) throws RuntimeException{
+        Optional<Product> product = this.products.getProduct(id);
+        if(product.isPresent()){
+            return product.get();
+        }else{
+            throw new RuntimeException("Can´t find Product with ID: "+id);
+        }
     }
 
-    public void addNewProduct(){
-        // Add Product to product repo.
+    public void addNewProduct(Product toAdd){
+        this.products.add(toAdd);
     }
 
     //TODO COULD BE NULL
