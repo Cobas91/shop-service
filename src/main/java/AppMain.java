@@ -2,17 +2,13 @@ import model.Product;
 import repo.ProductRepo;
 import service.ShopService;
 
-import java.util.ArrayList;
-
 public class AppMain {
 
     public static void main(String[] args) {
-        ShopService shop = new ShopService(50);
+        ShopService shop = new ShopService(10);
 
         //System.out.println(shop.findProduct(3));
-        //System.out.println(shop.listAllProducts());
-
-
+        System.out.println(shop.listAllProducts());
 
         ProductRepo products = new ProductRepo();
         products.add(new Product(1, "Banane", 1.1));
@@ -25,6 +21,6 @@ public class AppMain {
         shop.addOrder(products2);
         //System.out.println(shop.listAllOrders());
 
-        System.out.println(shop.getOrderByID(1));
+        //System.out.println(shop.getOrderByID(0));
     }
 }

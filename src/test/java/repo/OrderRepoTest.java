@@ -1,13 +1,8 @@
 package repo;
 
-
 import model.Order;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderRepoTest {
@@ -33,13 +28,13 @@ class OrderRepoTest {
     public void testAddMethod(){
         // GIVE
         ProductRepo productList = new ProductRepo(5);
-        ProductRepo productList2 = new ProductRepo(5);
 
         Order order = new Order(productList, 1);
-        Order order2 = new Order(productList, 1);
+        Order order2 = new Order(productList, 2);
 
-        OrderRepo orders = new OrderRepo(order);
+        OrderRepo orders = new OrderRepo();
         // WHEN
+        orders.add(order);
         orders.add(order2);
         // THEN
         assertEquals(2,orders.list().size());

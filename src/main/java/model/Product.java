@@ -12,6 +12,7 @@ public class Product {
         this.productDiscription = productDiscription;
         this.price = price;
     }
+
     @Override
     public String toString(){
         String newLine = System.getProperty("line.separator");

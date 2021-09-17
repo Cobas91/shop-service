@@ -1,8 +1,6 @@
 package model;
 
-import repo.OrderRepo;
 import repo.ProductRepo;
-
 import java.util.Objects;
 
 public class Order {

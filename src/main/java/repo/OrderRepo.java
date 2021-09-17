@@ -1,8 +1,6 @@
 package repo;
 
 import model.Order;
-import model.Product;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +11,7 @@ public class OrderRepo {
     public OrderRepo(Order order){
         this.orders.put(order.getOrderNumber(), order);
     }
+
     public OrderRepo(){
 
     }

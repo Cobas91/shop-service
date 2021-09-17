@@ -56,9 +56,9 @@ public class ProductRepo {
         return list.toString();
     }
 
-    /*
+        /*
             Hilfsfunktionen zum erstellen einer Produkt Datenbank.
-         */
+        */
     public Map<Integer, Product> generateProduct(int amount){
         Map<Integer, Product> data = new HashMap<>();
         for (int i = 0; i < amount; i++) {

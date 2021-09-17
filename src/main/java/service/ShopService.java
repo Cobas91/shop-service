@@ -9,6 +9,18 @@ public class ShopService {
     private ProductRepo products;
     private OrderRepo orders = new OrderRepo();
 
+    /**
+     * Creating a Instance of a Shop System.
+     * The prodcutRepoAmount argument can be set to get a random amount of Prodcuts based on that value.
+     * <p>
+     * @see #addOrder(ProductRepo)
+     * @see #listAllOrders()
+     * @see #getOrderByID(int)
+     * @see #listAllProducts()
+     * @see #findProduct(int)
+     *
+     * @param  productRepoAmount  the amount of automaticly generated Products.
+     */
     public ShopService(int productRepoAmount){
         this.products = new ProductRepo(productRepoAmount);
     }
@@ -29,7 +41,12 @@ public class ShopService {
     public String listAllOrders(){
         return this.orders.toString();
     }
-
+    /**
+     * Add Order .
+     * The prodcutRepoAmount argument can be set to get a random amount of Prodcuts based on that value.
+     * <p>
+     * @param products Typ ProductRepo
+     */
     public void addOrder(ProductRepo products){
         int orderNumber = orders.list().size();
         Order order = new Order(products,orderNumber);
