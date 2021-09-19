@@ -3,9 +3,10 @@ package repo;
 import model.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
-class OrderRepoTest {
+public class OrderRepoTest {
 
     @Test
     @DisplayName("Test list Method init the OrderRepo with one order in it")
@@ -19,7 +20,7 @@ class OrderRepoTest {
         // WHEN
         int actual = orders.list().size();
         // THEN
-        assertEquals(1,actual);
+        assertThat(actual, is(1));
 
     }
 
@@ -37,7 +38,7 @@ class OrderRepoTest {
         orders.add(order);
         orders.add(order2);
         // THEN
-        assertEquals(2,orders.list().size());
+        assertThat(orders.list().size(), is(2));
 
     }
 

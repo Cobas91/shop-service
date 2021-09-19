@@ -1,6 +1,5 @@
+model/Order.class
 AppMain.class
 repo/ProductRepo.class
-model/Order.class
-model/Product.class
 service/ShopService.class
 repo/OrderRepo.class

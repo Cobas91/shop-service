@@ -1,5 +1,6 @@
 package model;
 
+import interfaces.Product;
 import repo.ProductRepo;
 import java.util.Objects;
 
@@ -11,9 +12,11 @@ public class Order {
         this.allProducts = allProducts;
         this.orderNumber = orderNumber;
     }
+
     public void add(Product product){
         this.allProducts.add(product);
     }
+
     public ProductRepo getAllProducts() {
         return allProducts;
     }
