@@ -10,6 +10,19 @@ public class Vegetables implements Product {
     private double price;
     private String country;
 
+    public Vegetables(int productNumber, String description, double price, String country){
+        this.productNumber = productNumber;
+        this.description = description;
+        this.price = price;
+        this.country = country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    public String country(){
+        return this.country;
+    }
     @Override
     public String getDescription() {
         return this.description;
@@ -40,7 +53,7 @@ public class Vegetables implements Product {
         String newLine = System.getProperty("line.separator");
         return
                 "Name: "+this.description+ newLine +
-                        "Productnummer: "+this.productNumber + newLine+
+                        "Produktnummer: "+this.productNumber + newLine+
                         "Preis: "+this.price+ newLine +
                         "___________"+newLine;
     }

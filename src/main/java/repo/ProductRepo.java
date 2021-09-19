@@ -1,6 +1,7 @@
 package repo;
 
-import model.Product;
+import interfaces.Product;
+import model.Vegetables;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -56,7 +57,7 @@ public class ProductRepo {
     public Map<Integer, Product> generateProduct(int amount){
         Map<Integer, Product> data = new HashMap<>();
         for (int i = 0; i < amount; i++) {
-            data.put(i , new Product(i, getRandomProductName(), getRandomPrice()));
+            data.put(i , new Vegetables(i, getRandomProductName(), getRandomPrice(), "DE"));
         }
         return data;
     }

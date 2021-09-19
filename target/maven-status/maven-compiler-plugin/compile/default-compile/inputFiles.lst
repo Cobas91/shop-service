@@ -1,6 +1,9 @@
 /Users/cobas/Documents/NeueFische/shop-service/src/main/java/repo/ProductRepo.java
-/Users/cobas/Documents/NeueFische/shop-service/src/main/java/model/Product.java
 /Users/cobas/Documents/NeueFische/shop-service/src/main/java/AppMain.java
 /Users/cobas/Documents/NeueFische/shop-service/src/main/java/repo/OrderRepo.java
 /Users/cobas/Documents/NeueFische/shop-service/src/main/java/service/ShopService.java
+/Users/cobas/Documents/NeueFische/shop-service/src/main/java/interfaces/Product.java
+/Users/cobas/Documents/NeueFische/shop-service/src/main/java/model/Notebook.java
+/Users/cobas/Documents/NeueFische/shop-service/src/main/java/model/Vegetables.java
+/Users/cobas/Documents/NeueFische/shop-service/src/main/java/interfaces/Hardware.java
 /Users/cobas/Documents/NeueFische/shop-service/src/main/java/model/Order.java

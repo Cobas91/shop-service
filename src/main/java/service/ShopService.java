@@ -1,7 +1,7 @@
 package service;
 
+import interfaces.Product;
 import model.Order;
-import model.Product;
 import repo.OrderRepo;
 import repo.ProductRepo;
 

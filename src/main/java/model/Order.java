@@ -1,5 +1,6 @@
 package model;
 
+import interfaces.Product;
 import repo.ProductRepo;
 import java.util.Objects;
 

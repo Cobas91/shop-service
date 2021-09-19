@@ -1,4 +1,5 @@
-import model.Product;
+import interfaces.Product;
+import model.Vegetables;
 import repo.ProductRepo;
 import service.ShopService;
 
@@ -16,10 +17,10 @@ public class AppMain {
         //System.out.println(shop.listAllProducts());
 
         ProductRepo products = new ProductRepo();
-        products.add(new Product(1, "Banane", 1.1));
+        products.add(new Vegetables(1, "Banane", 1.1, "DE"));
         ProductRepo products2 = new ProductRepo();
-        products2.add(new Product(1, "Banane", 1.1));
-        products2.add(new Product(2, "Kartoffel", 1.1));
+        products2.add(new Vegetables(1, "Banane", 1.1,"DE"));
+        products2.add(new Vegetables(2, "Kartoffel", 1.1,"DE"));
 
 
         shop.addOrder(products);
